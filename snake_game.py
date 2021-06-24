@@ -1,6 +1,7 @@
 import pygame
+import pdb
 
-from snake import Snake
+from snake import Snake, Food
 
 from pygame.locals import (
     K_UP,
@@ -17,13 +18,14 @@ BLACK = (0, 0, 0)
 pygame.init()
 clock = pygame.time.Clock()
 
-SCREEN_HEIGHT = 600
-SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 1200
+SCREEN_WIDTH = 1600
 screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 
 # Create a snake
 snake = Snake((SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
-direction = [0, 0]
+food = Food(SCREEN_WIDTH, SCREEN_HEIGHT) 
+direction = [1, 0]
 # Run until the user asks to quit
 running = True
 while running:
@@ -45,14 +47,33 @@ while running:
         direction = [1, 0]
 
     snake.change_direction(direction)
-    snake.update()
 
+    if (snake.get_head_pos() == food.get_pos()):
+        snake.grow()
+        del food
+        food = Food(SCREEN_WIDTH, SCREEN_HEIGHT)
+    else:
+        snake.update()
+
+    for bone in snake.body:
+        print(bone.pos)
+    print("="*10)
+
+    head_pos = snake.get_head_pos()
+    if head_pos[0] == SCREEN_WIDTH or head_pos[0] == 0:
+        running = False
+    if head_pos[1] == SCREEN_HEIGHT or head_pos[1] == 0:
+        running = False
+    if snake.eats_itself():
+        running = False
+    
+    
     screen.fill(BLACK)
     snake.draw(screen)
-
+    food.draw(screen)
     pygame.display.update()
 
     # Limit to 30 fps
-    clock.tick(30)
+    clock.tick(10)
 # Done! Time to quit.
 pygame.quit()
