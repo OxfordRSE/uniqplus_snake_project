@@ -21,7 +21,7 @@ class Snake:
         current_pos = current_head.pos
         x = current_pos[0] + direction[0] * size
         y = current_pos[1] + direction[1] * size
-        head = Bone([x, y], self.size)
+        head = Bone((x, y), self.size)
         self.body.append(head)
 
     def draw(self, screen):
@@ -65,7 +65,7 @@ class Food:
     def __init__(self, screen_width, screen_height, size=20):
         x = round(random.randrange(0, screen_width - size)/size) * size
         y = round(random.randrange(0, screen_height - size)/size) * size
-        self.bone = Bone([x, y], size)
+        self.bone = Bone((x, y), size)
 
     def draw(self, screen):
         self.bone.draw(screen)
