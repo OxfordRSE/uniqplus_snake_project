@@ -19,15 +19,16 @@ class Snake:
     def get_head_pos(self):
         return self.body[-1].pos
 
-    def grow(self):
-        direction = self.direction
-        size = self.size
-        current_head = self.body[-1]
-        current_pos = current_head.pos
+    def get_new_head_pos(self):
+        current_head_pos = self.get_head_pos()
         new_head_pos = (
-            current_pos[0] + direction[0] * size,
-            current_pos[1] + direction[1] * size
+            current_head_pos[0] + self.direction[0] * self.size,
+            current_head_pos[1] + self.direction[1] * self.size,
         )
+        return new_head_pos
+
+    def grow(self):
+        new_head_pos = self.get_new_head_pos()
         # Check if new head pos coincides with any of the bones
         if new_head_pos in [bone.pos for bone in self.body]:
             raise SnakeEatsItselfException
@@ -42,14 +43,7 @@ class Snake:
         self.direction = direction
 
     def update(self):
-        direction = self.direction
-        size = self.size
-        current_head = self.body[-1]
-        current_pos = current_head.pos
-        new_head_pos = (
-            current_pos[0] + direction[0] * size,
-            current_pos[1] + direction[1] * size
-        )
+        new_head_pos = self.get_new_head_pos()
         # Check if new head pos coincides with any of the bones except
         # tail (removed)
         if new_head_pos in [bone.pos for bone in self.body[1:]]:
