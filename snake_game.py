@@ -49,7 +49,7 @@ while running:
     snake.change_direction(direction)
 
     try:
-        if (snake.get_head_pos() == food.get_pos()):
+        if snake.get_head_pos() == food.get_pos():
             snake.grow()
             del food
             food = Food(SCREEN_WIDTH, SCREEN_HEIGHT)

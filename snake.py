@@ -59,13 +59,15 @@ class Bone:
         self.size = size
 
     def draw(self, screen):
-        pygame.draw.rect(screen, WHITE, [self.pos[0], self.pos[1], self.size, self.size])
+        pygame.draw.rect(
+            screen, WHITE, [self.pos[0], self.pos[1], self.size, self.size]
+        )
 
 
 class Food:
     def __init__(self, screen_width, screen_height, size=20):
-        x = round(random.randrange(0, screen_width - size)/size) * size
-        y = round(random.randrange(0, screen_height - size)/size) * size
+        x = round(random.randrange(0, screen_width - size) / size) * size
+        y = round(random.randrange(0, screen_height - size) / size) * size
         self.bone = Bone((x, y), size)
 
     def draw(self, screen):
