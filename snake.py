@@ -10,10 +10,10 @@ class SnakeEatsItselfException(Exception):
 
 class Snake:
     def __init__(self, position, size=20):
-        bone = Bone(position, size)
-        bone2 = Bone((position[0] + 20, position[1]), size)
-        self.body = [bone, bone2]
-        self.direction = [0, 0]
+        head = Bone(position, size)
+        tail = Bone((position[0] + size, position[1]), size)
+        self.body = [tail, head]
+        self.direction = [1, 0]
         self.size = size
 
     def get_head_pos(self):
