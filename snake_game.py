@@ -1,7 +1,7 @@
 import pygame
 import pdb
 
-from snake import Snake, Food
+from snake import Snake, Food, SnakeEatsItselfException
 
 from pygame.locals import (
     K_UP,
@@ -48,26 +48,23 @@ while running:
 
     snake.change_direction(direction)
 
-    if (snake.get_head_pos() == food.get_pos()):
-        snake.grow()
-        del food
-        food = Food(SCREEN_WIDTH, SCREEN_HEIGHT)
-    else:
-        snake.update()
-
-    for bone in snake.body:
-        print(bone.pos)
-    print("="*10)
+    try:
+        if (snake.get_head_pos() == food.get_pos()):
+            snake.grow()
+            del food
+            food = Food(SCREEN_WIDTH, SCREEN_HEIGHT)
+        else:
+            snake.update()
+    except SnakeEatsItselfException:
+        print("Snake ate itself!")
+        running = False
 
     head_pos = snake.get_head_pos()
     if head_pos[0] == SCREEN_WIDTH or head_pos[0] == 0:
         running = False
     if head_pos[1] == SCREEN_HEIGHT or head_pos[1] == 0:
         running = False
-    if snake.eats_itself():
-        running = False
-    
-    
+
     screen.fill(BLACK)
     snake.draw(screen)
     food.draw(screen)

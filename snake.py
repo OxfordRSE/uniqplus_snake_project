@@ -3,6 +3,11 @@ import random
 
 WHITE = (255, 255, 255)
 
+
+class SnakeEatsItselfException(Exception):
+    pass
+
+
 class Snake:
     def __init__(self, position, size=20):
         bone = Bone(position, size)
@@ -19,13 +24,17 @@ class Snake:
         size = self.size
         current_head = self.body[-1]
         current_pos = current_head.pos
-        x = current_pos[0] + direction[0] * size
-        y = current_pos[1] + direction[1] * size
-        head = Bone((x, y), self.size)
+        new_head_pos = (
+            current_pos[0] + direction[0] * size,
+            current_pos[1] + direction[1] * size
+        )
+        # Check if new head pos coincides with any of the bones
+        if new_head_pos in [bone.pos for bone in self.body]:
+            raise SnakeEatsItselfException
+        head = Bone(new_head_pos, self.size)
         self.body.append(head)
 
     def draw(self, screen):
-        print(len(self.body))
         for bone in self.body:
             bone.draw(screen)
 
@@ -37,19 +46,17 @@ class Snake:
         size = self.size
         current_head = self.body[-1]
         current_pos = current_head.pos
-        x = current_pos[0] + direction[0] * size
-        y = current_pos[1] + direction[1] * size
-        head = Bone([x, y], self.size)
+        new_head_pos = (
+            current_pos[0] + direction[0] * size,
+            current_pos[1] + direction[1] * size
+        )
+        # Check if new head pos coincides with any of the bones except
+        # tail (removed)
+        if new_head_pos in [bone.pos for bone in self.body[1:]]:
+            raise SnakeEatsItselfException
+        head = Bone(new_head_pos, self.size)
         self.body.append(head)
         self.body.pop(0)
-
-    def eats_itself(self):
-        bones = list(self.body)
-        bones.pop()
-        for bone in bones:
-            if bone.pos == self.get_head_pos():
-                return True
-        return False
 
 
 class Bone:
