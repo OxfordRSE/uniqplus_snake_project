@@ -27,18 +27,6 @@ class Snake:
         )
         return new_head_pos
 
-    def grow(self):
-        new_head_pos = self.get_new_head_pos()
-        # Check if new head pos coincides with any of the bones
-        if new_head_pos in [bone.pos for bone in self.body]:
-            raise SnakeEatsItselfException
-        head = Bone(new_head_pos, self.size)
-        self.body.append(head)
-
-    def draw(self, screen):
-        for bone in self.body:
-            bone.draw(screen)
-
     def change_direction(self, direction):
         self.direction = direction
 
@@ -51,6 +39,18 @@ class Snake:
         head = Bone(new_head_pos, self.size)
         self.body.append(head)
         self.body.pop(0)
+
+    def grow(self):
+        new_head_pos = self.get_new_head_pos()
+        # Check if new head pos coincides with any of the bones
+        if new_head_pos in [bone.pos for bone in self.body]:
+            raise SnakeEatsItselfException
+        head = Bone(new_head_pos, self.size)
+        self.body.append(head)
+
+    def draw(self, screen):
+        for bone in self.body:
+            bone.draw(screen)
 
 
 class Bone:
