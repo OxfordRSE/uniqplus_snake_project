@@ -24,8 +24,8 @@ screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 
 # Create a snake
 snake = Snake((SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
-food = Food(SCREEN_WIDTH, SCREEN_HEIGHT)
-direction = [0, 0]
+food = Food(SCREEN_WIDTH, SCREEN_HEIGHT) 
+direction = [1, 0]
 # Run until the user asks to quit
 running = True
 while running:
