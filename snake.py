@@ -31,14 +31,8 @@ class Snake:
         self.direction = direction
 
     def update(self):
-        new_head_pos = self.get_new_head_pos()
-        # Check if new head pos coincides with any of the bones except
-        # tail (removed)
-        if new_head_pos in [bone.pos for bone in self.body[1:]]:
-            raise SnakeEatsItselfException
-        head = Bone(new_head_pos, self.size)
-        self.body.append(head)
         self.body.pop(0)
+        self.grow()
 
     def grow(self):
         new_head_pos = self.get_new_head_pos()
