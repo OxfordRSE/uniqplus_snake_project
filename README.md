@@ -17,3 +17,10 @@ This repository represents a day long project providing an introduction to objec
 ## Other game characteristics
 - Food appears at the start of the game in a random location on the screen.
 - Each time a piece of food is eaten, another piece of food appears at a random location on the screen.
+
+## How to get started
+In this project, we are going to use the Python package `pygame`. To install it, you can run:
+
+`pip install pygame`
+
+from the command line. Note that this requires you to have the command line tool `pip` installed (see [here](https://pip.pypa.io/en/stable/installing/) for instructions on this).
