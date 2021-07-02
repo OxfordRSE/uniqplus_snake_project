@@ -4,17 +4,33 @@ import random
 WHITE = (255, 255, 255)
 
 
-class SnakeEatsItselfException(Exception):
-    pass
+def message(msg, screen, screen_width, screen_height):
+    font_style = pygame.font.SysFont(None, 50, screen_width, screen_height)
+    mesg = font_style.render(msg, True, WHITE)
+    screen.blit(mesg, [screen_width/2, screen_height/2])
 
 
 class Snake:
     def __init__(self, position, size=20):
-        head = Bone(position, size)
-        tail = Bone((position[0] + size, position[1]), size)
-        self.body = [tail, head]
-        self.direction = [1, 0]
+        bone = Bone(position, size)
+        self.body = [bone]
+        self.direction = [0, 0]
         self.size = size
+
+    def change_direction(self, direction):
+        self.direction = direction
+
+    def draw(self, screen):
+        for bone in self.body:
+            bone.draw(screen)
+
+    def eats_itself(self, new_head_pos):
+        # Check if new head pos coincides with any of the bones
+        if len(self.body) > 1:
+            if new_head_pos in [bone.pos for bone in self.body]:
+                return True
+        else:
+            False
 
     def get_head_pos(self):
         return self.body[-1].pos
@@ -27,24 +43,30 @@ class Snake:
         )
         return new_head_pos
 
-    def change_direction(self, direction):
-        self.direction = direction
-
-    def update(self):
-        self.body.pop(0)
-        self.grow()
-
     def grow(self):
         new_head_pos = self.get_new_head_pos()
-        # Check if new head pos coincides with any of the bones
-        if new_head_pos in [bone.pos for bone in self.body]:
-            raise SnakeEatsItselfException
         head = Bone(new_head_pos, self.size)
         self.body.append(head)
 
-    def draw(self, screen):
-        for bone in self.body:
-            bone.draw(screen)
+    def hits_side(self, head_pos, screen_width, screen_height):
+        if head_pos[0] == screen_width or head_pos[0] == 0:
+            return True
+        if head_pos[1] == screen_height or head_pos[1] == 0:
+            return True
+        return False
+
+    def move_and_survive(self, screen_width, screen_height):
+        new_head_pos = self.get_new_head_pos()
+        has_eaten_itself = self.eats_itself(new_head_pos)
+        if has_eaten_itself:
+            return False
+        has_hit_side = self.hits_side(new_head_pos, screen_width, screen_height)
+        if has_hit_side:
+            return False
+        head = Bone(new_head_pos, self.size)
+        self.body.append(head)
+        self.body.pop(0)
+        return True
 
 
 class Bone:

@@ -1,7 +1,7 @@
 import pygame
-import pdb
+import time
 
-from snake import Snake, Food, SnakeEatsItselfException
+from snake import Snake, Food, message
 
 from pygame.locals import (
     K_UP,
@@ -24,10 +24,11 @@ screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 
 # Create a snake
 snake = Snake((SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
-food = Food(SCREEN_WIDTH, SCREEN_HEIGHT) 
-direction = [1, 0]
+food = Food(SCREEN_WIDTH, SCREEN_HEIGHT)
+direction = [0, 0]
 # Run until the user asks to quit
 running = True
+is_survived = True
 while running:
     for event in pygame.event.get():
         if event.type == KEYDOWN:
@@ -48,21 +49,14 @@ while running:
 
     snake.change_direction(direction)
 
-    try:
-        if snake.get_head_pos() == food.get_pos():
-            snake.grow()
-            del food
-            food = Food(SCREEN_WIDTH, SCREEN_HEIGHT)
-        else:
-            snake.update()
-    except SnakeEatsItselfException:
-        print("Snake ate itself!")
-        running = False
+    if snake.get_head_pos() == food.get_pos():
+        snake.grow()
+        del food
+        food = Food(SCREEN_WIDTH, SCREEN_HEIGHT)
+    else:
+        is_survived = snake.move_and_survive(SCREEN_WIDTH, SCREEN_HEIGHT)
 
-    head_pos = snake.get_head_pos()
-    if head_pos[0] == SCREEN_WIDTH or head_pos[0] == 0:
-        running = False
-    if head_pos[1] == SCREEN_HEIGHT or head_pos[1] == 0:
+    if not is_survived:
         running = False
 
     screen.fill(BLACK)
@@ -73,4 +67,9 @@ while running:
     # Limit to 30 fps
     clock.tick(10)
 # Done! Time to quit.
+
+message("You lost", screen, SCREEN_WIDTH, SCREEN_HEIGHT)
+pygame.display.update()
+time.sleep(2)
 pygame.quit()
+quit()
