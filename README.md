@@ -13,16 +13,15 @@ Here, we offer two possible variants of the game of increasing difficulty:
 1. *Short Snake*. The rules of this game are [here](./rules/short_snake.md)
 2. *Growing Snake*. The rules of this game are [here](./rules/growing_snake.md)
 
-We recommend that all game developers start with *Short Snake* before moving on to *Growing Snake*.
+We recommend that all game developers start with *Short Snake* before moving on to *Growing Snake*. We also highly recommend that you go through the vignettes below for `pygame`: the Python package we are going to use to code up our game.
 
-## Installing pygame
-In this project, we are going to use the Python package `pygame`. To install it, you can run:
+## Getting up and running in pygame
+To install `pygame`, you can run:
 
 `pip install pygame`
 
 from the command line. Note that this requires you to have the command line tool `pip` installed (see [here](https://pip.pypa.io/en/stable/installing/) for instructions on this).
 
-## Getting started with pygame
 To help get you acquainted with pygame and to give some guidance of the task, we have created the following short vignettes:
 - [Setting up a blank canvas](./steps/blank_screen.md)
 - [Drawing on the canvas](./steps/drawing.md)
