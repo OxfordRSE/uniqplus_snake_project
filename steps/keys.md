@@ -112,4 +112,4 @@ which then prints each direction to the screen if a key is pressed.
 
 # Next vignette
 
-We now know how to draw objects on the screen and how to determine which arrow keys are pressed by a user during the game. In our [next](./moving.md) vignette, we combine these two, to allow us to move a rectangle over the screen using the arrow keys.
+We now know how to draw objects on the screen and how to determine which arrow keys are pressed by a user during the game. In our [next](./moving.md) vignette, we combine these two, to allow us to move a square around the screen using the arrow keys.

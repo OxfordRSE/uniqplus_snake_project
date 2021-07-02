@@ -18,21 +18,21 @@ screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-# Function which draws rectangle at some point
-def draw_rectangle(x, y, size=20):
+# Function which draws square at some point
+def draw_square(x, y, size=20):
     pygame.draw.rect(
             screen, WHITE,
       			[x, y, size, size]
         )
 
-# Function which moves rectangle
-def move_rectangle(direction, current_x, current_y, size=20):
+# Function which moves square
+def move_square(direction, current_x, current_y, size=20):
     new_x = current_x + size * direction[0]
     new_y = current_y + size * direction[1]
     return new_x, new_y
     
 
-# Initialise rectangle position and velocity
+# Initialise square position and velocity
 x, y = SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2
 direction = [0, 0]
 
@@ -60,9 +60,9 @@ while not game_over:
     elif keys_pressed[K_RIGHT]:
         direction = [1, 0]
     
-    # Update rectangle position
-    x, y = move_rectangle(direction, x, y)
-    draw_rectangle(x, y)
+    # Update square position
+    x, y = move_square(direction, x, y)
+    draw_square(x, y)
     
     # Update display
     pygame.display.update()
