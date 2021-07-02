@@ -77,3 +77,8 @@ Many of the things that are needed to code up the main script are contained with
   5. If the snake hasn't survived terminate the game
   6. Otherwise draw the canvas, the snake and the food
 
+## Other things to consider
+
+* Do you want to keep track of a score representing the number of times a snake has fed? 
+  * Do we want to display this score somewhere?
+* Do we want to show a message when the game ends?
