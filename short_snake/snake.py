@@ -19,7 +19,7 @@ def score_message(score, screen, screen_width, screen_height):
 class Snake:
     def __init__(self, position, size=20):
         bone = Bone(position, size)
-        self.body = [bone]
+        self.body = bone
         self.direction = [0, 0]
         self.size = size
 
@@ -27,53 +27,35 @@ class Snake:
         self.direction = direction
 
     def draw(self, screen):
-        for bone in self.body:
-            bone.draw(screen)
+        self.body.draw(screen)
 
-    def eats_itself(self, new_head_pos):
-        # Check if new head pos coincides with any of the bones
-        if len(self.body) > 1:
-            if new_head_pos in [bone.pos for bone in self.body]:
-                return True
-        else:
-            False
-
-    def get_head_pos(self):
-        return self.body[-1].pos
-
-    def get_new_head_pos(self):
-        current_head_pos = self.get_head_pos()
-        new_head_pos = (
-            current_head_pos[0] + self.direction[0] * self.size,
-            current_head_pos[1] + self.direction[1] * self.size,
+    def get_new_pos(self):
+        current_pos = self.get_pos()
+        new_pos = (
+            current_pos[0] + self.direction[0] * self.size,
+            current_pos[1] + self.direction[1] * self.size,
         )
-        return new_head_pos
+        return new_pos
+    
+    def get_pos(self):
+        return self.body.pos
 
-    def grow(self):
-        new_head_pos = self.get_new_head_pos()
-        head = Bone(new_head_pos, self.size)
-        self.body.append(head)
-
-    def hits_side(self, head_pos, screen_width, screen_height):
-        # needs negative here for latter since head_pos[0] is left side
-        if head_pos[0] == screen_width or head_pos[0] == -self.size:
+    def hits_side(self, pos, screen_width, screen_height):
+        # needs negative here for latter since pos[0] is left side
+        if pos[0] == screen_width or pos[0] == -self.size:
             return True
-        # needs negative here for latter since head_pos[1] is top side
-        if head_pos[1] == screen_height or head_pos[1] == -self.size:
+        # needs negative here for latter since pos[0] is topside
+        if pos[1] == screen_height or pos[1] == -self.size:
             return True
         return False
 
     def move_and_survive(self, screen_width, screen_height):
-        new_head_pos = self.get_new_head_pos()
-        has_eaten_itself = self.eats_itself(new_head_pos)
-        if has_eaten_itself:
-            return False
-        has_hit_side = self.hits_side(new_head_pos, screen_width, screen_height)
+        new_pos = self.get_new_pos()
+        has_hit_side = self.hits_side(new_pos, screen_width, screen_height)
         if has_hit_side:
             return False
-        head = Bone(new_head_pos, self.size)
-        self.body.append(head)
-        self.body.pop(0)
+        moved_bone = Bone(new_pos, self.size)
+        self.body = moved_bone
         return True
 
 
