@@ -81,7 +81,7 @@ imports the numeric constants that pygame uses as keys in the dictionary that is
 keys_pressed = pygame.key.get_pressed()
 ```
 
-So that `keys_pressed[K_UP]` returns True if the up arrow key is pressed; `keys_pressed[K_RIGHT]` returns True if the right arrow key is pressed; and so on.
+So that `keys_pressed[K_UP]` returns `True` if the up arrow key is pressed; `keys_pressed[K_RIGHT]` returns `True` if the right arrow key is pressed; and so on.
 
 We then create a function:
 
@@ -109,3 +109,7 @@ elif keys_pressed[K_RIGHT]:
 ```
 
 which then prints each direction to the screen if a key is pressed.
+
+# Next vignette
+
+We now know how to draw objects on the screen and how to determine which arrow keys are pressed by a user during the game. In our [next](./moving.md) vignette, we combine these two, to allow us to move a rectangle over the screen using the arrow keys.
