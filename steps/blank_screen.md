@@ -4,7 +4,7 @@
 
 In this first session, we are going to create a blank screen using pygame. This screen will be where our snake lives, roams and feeds.
 
-Code to do this is below. Copy and paste it into a script file and run the script. Note that the below code if ran will appear then immediately close.
+Code to do this is below. Copy and paste it into a script file and run the script. Note that the below code if ran will produce a screen that appears then disappears in the blink of an eye!
 
 ```python
 import pygame
