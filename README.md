@@ -22,7 +22,7 @@ To help get you acquainted with pygame and to give some guidance of the task, we
 - [Setting up a blank canvas](./steps/blank_screen.md)
 - [Drawing on the canvas](./steps/drawing.md)
 - [Accessing the keys pressed by a user](./steps/keys.md)
-- [Moving a rectangle across the canvas using the keys](./steps/moving.md)
+- [Moving a square across the canvas using the keys](./steps/moving.md)
 - [Controlling the game speed](./steps/speed.md)
 
 ## Our snake games
