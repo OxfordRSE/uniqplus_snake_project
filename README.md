@@ -36,5 +36,5 @@ We recommend that all game developers start with *Short Snake*. To help coders t
 *Growing Snake* is harder but has much in common with *Short Snake*. Because of this, we do not provide a guide here. But, like for *Short Snake*, we do provide a working version of the game in [this](./growing_snake/) folder.
 
 ## Note
-Our working versions of the game are _not_ meant to represent perfect code. Rather, they represent one interpretation of how to code up the games in a manner which is somewhat pedagogical with respect to OOP.
+Our working versions of the game are _not_ meant to represent perfect code. Rather, they represent one interpretation of how to code up the games in a manner which is somewhat pedagogical with respect to OOP principles.
 
