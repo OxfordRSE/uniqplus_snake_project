@@ -30,7 +30,6 @@ WHITE = (255, 255, 255)
 game_over=False
 while not game_over:
     for event in pygame.event.get():
-        print("event = ", event)
         if event.type==pygame.QUIT:
             game_over=True
     
@@ -88,7 +87,6 @@ WHITE = (255, 255, 255)
 game_over=False
 while not game_over:
     for event in pygame.event.get():
-        print("event = ", event)
         if event.type==pygame.QUIT:
             game_over=True
     

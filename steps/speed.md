@@ -1,3 +1,10 @@
+# Game speed
+
+The code in [this](.moving.md) vignette showed how to make a rectangle move around the screen. We want to control the rate at which this happens. We do this using [pygame.time.Clock()](https://www.pygame.org/docs/ref/time.html): this creates a clock object that allows us to track the amount of time and, in doing so, controls the game's frame rate.
+
+The second part of controlling the game speed is using the `.tick(framerate)` function, which takes as an argument the frame rate. This function essentially delays updating of the game in accordance with the frame rate: the faster the frame rate, the faster the rate of updates! Below we start with a frame rate of 10. But you can try smaller or larger values to see how this impacts speed.
+
+```python
 import pygame
 # import constants used by pygame to map each key
 from pygame.locals import (
@@ -30,12 +37,14 @@ def move_rectangle(direction, current_x, current_y, size=20):
     new_x = current_x + size * direction[0]
     new_y = current_y + size * direction[1]
     return new_x, new_y
-    
 
 # Initialise rectangle position and velocity
 x, y = SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2
 direction = [0, 0]
 
+# Create clock and specify the frame rate
+clock = pygame.time.Clock()
+speed = 10
 
 # Run game loop
 game_over=False
@@ -66,5 +75,10 @@ while not game_over:
     
     # Update display
     pygame.display.update()
+    
+    # Delay game updates according to frame rate
+    clock.tick(speed)
 
 pygame.quit()
+```
+
