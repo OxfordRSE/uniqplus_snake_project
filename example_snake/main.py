@@ -1,6 +1,5 @@
 import pygame
 import time
-import sys
 
 from snake import Snake, Food, losing_message, score_message
 
