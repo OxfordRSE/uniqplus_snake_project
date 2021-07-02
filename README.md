@@ -25,8 +25,8 @@ In this project, we are going to use the Python package `pygame`. To install it,
 
 from the command line. Note that this requires you to have the command line tool `pip` installed (see [here](https://pip.pypa.io/en/stable/installing/) for instructions on this).
 
-## Getting started
-To help get you acquainted with pygame and to give some guidance of the task, we have created the following short vignettes, which guide you through the process.
+## Getting started with pygame
+To help get you acquainted with pygame and to give some guidance of the task, we have created the following short vignettes:
 - [Setting up a blank canvas](./steps/blank_screen.md)
 - [Drawing on the canvas](./steps/drawing.md)
 - [Accessing the keys pressed by a user](./steps/keys.md)
