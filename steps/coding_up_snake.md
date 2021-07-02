@@ -40,3 +40,4 @@ The food also has two methods:
 
 * `draw()`: which draws the food on the screen by drawing the underlying bone
 * `get_pos()`: which returns its position (this is going to be used by the `Snake` to check whether the food has been eaten)
+
