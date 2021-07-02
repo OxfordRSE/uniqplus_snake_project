@@ -7,16 +7,13 @@ This repository represents a day long project providing an introduction to objec
 
 ![example screenshot](https://www.silicon.co.uk/wp-content/uploads/2012/08/snakenokia3310.jpg)
 
-## What are the rules of our snake game?
-1. The snake begins as a single bone in the middle of the screen.
-2. The player selects a direction for their snake to move (up, down, left or right) using the arrow keys.
-3. If the snake encounters food, it grows by one bone.
-4. If the snake hits itself, it dies.
-5. If the snake hits the side of the domain, it dies.
+## Our snake games
+Here, we offer two possible variants of the game of increasing difficulty:
 
-## Other game characteristics
-- Food appears at the start of the game in a random location on the screen.
-- Each time a piece of food is eaten, another piece of food appears at a random location on the screen.
+1. *Short Snake*. The rules of this game are [here](./rules/short_snake.md)
+2. *Growing Snake*. The rules of this game are [here](./rules/growing_snake.md)
+
+We recommend that all game developers start with *Short Snake* before moving on to *Growing Snake*.
 
 ## Installing pygame
 In this project, we are going to use the Python package `pygame`. To install it, you can run:
