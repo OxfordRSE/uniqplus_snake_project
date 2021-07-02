@@ -18,11 +18,13 @@ screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-# Function which produces a message
-def direction_message(msg):
-    font_style = pygame.font.SysFont(None, 50)
-    mesg = font_style.render(msg, True, WHITE)
-    screen.blit(mesg, [SCREEN_WIDTH // 2, 0])
+# Function which draws rectangle at some point
+def draw_rectangle(x, y, size=20):
+    pygame.draw.rect(
+            screen, WHITE,
+      			[x, y, size, size]
+        )
+    
 
 # Run game loop
 game_over=False
@@ -35,11 +37,7 @@ while not game_over:
     # Draw black canvas
     screen.fill(BLACK)
     # Draw rectangle
-    size = 20
-    pygame.draw.rect(
-            screen, WHITE,
-      			[SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, 20, 20]
-        )
+
     
     # Display the keys that are pressed by the user
     keys_pressed = pygame.key.get_pressed()

@@ -41,7 +41,7 @@ while not game_over:
     size = 20
     pygame.draw.rect(
             screen, WHITE,
-      			[SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, 20, 20]
+      			[SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, size, size]
         )
     pygame.display.update()
 
@@ -98,7 +98,7 @@ while not game_over:
     size = 20
     pygame.draw.rect(
             screen, WHITE,
-      			[SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, 20, 20]
+      			[SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, size, size]
         )
     
     # Draw text
