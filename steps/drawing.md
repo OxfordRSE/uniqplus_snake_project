@@ -113,3 +113,7 @@ while not game_over:
 pygame.quit()
 ```
 
+# Next vignette
+
+Now that we know how to draw on our canvas, we are going to want to be able to move our rectangle using the arrow keys. Our [next](.keys.md) vignette shows how to determine whether the keys are pressed by a user during the game.
+
