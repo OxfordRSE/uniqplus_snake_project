@@ -85,3 +85,8 @@ while not game_over:
 pygame.quit()
 ```
 
+
+
+# Next step: snake!
+
+Well done! You are now through the introduction to pygame. Your next step is to try to code up [short snake](../rules/short_snake.md).
