@@ -30,12 +30,14 @@ def move_square(direction, current_x, current_y, size=20):
     new_x = current_x + size * direction[0]
     new_y = current_y + size * direction[1]
     return new_x, new_y
-    
 
-# Initialise square position and velocity
+# Initialise rectangle position and velocity
 x, y = SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2
 direction = [0, 0]
 
+# Create clock and specify the frame rate
+clock = pygame.time.Clock()
+speed = 10
 
 # Run game loop
 game_over=False
@@ -66,5 +68,8 @@ while not game_over:
     
     # Update display
     pygame.display.update()
+    
+    # Delay game updates according to frame rate
+    clock.tick(speed)
 
 pygame.quit()

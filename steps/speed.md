@@ -1,6 +1,6 @@
 # Game speed
 
-The code in [this](.moving.md) vignette showed how to make a rectangle move around the screen. We want to control the rate at which this happens. We do this using [pygame.time.Clock()](https://www.pygame.org/docs/ref/time.html): this creates a clock object that allows us to track the amount of time and, in doing so, controls the game's frame rate.
+The code in [this](./moving.md) vignette showed how to make a square move around the screen. We want to control the rate at which this happens. We do this using [pygame.time.Clock()](https://www.pygame.org/docs/ref/time.html): this creates a clock object that allows us to track the amount of time and, in doing so, controls the game's frame rate.
 
 The second part of controlling the game speed is using the `.tick(framerate)` function, which takes as an argument the frame rate. This function essentially delays updating of the game in accordance with the frame rate: the faster the frame rate, the faster the rate of updates! Below we start with a frame rate of 10. But you can try smaller or larger values to see how this impacts speed.
 
@@ -25,15 +25,15 @@ screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-# Function which draws rectangle at some point
-def draw_rectangle(x, y, size=20):
+# Function which draws square at some point
+def draw_square(x, y, size=20):
     pygame.draw.rect(
             screen, WHITE,
       			[x, y, size, size]
         )
 
-# Function which moves rectangle
-def move_rectangle(direction, current_x, current_y, size=20):
+# Function which moves square
+def move_square(direction, current_x, current_y, size=20):
     new_x = current_x + size * direction[0]
     new_y = current_y + size * direction[1]
     return new_x, new_y
@@ -50,7 +50,6 @@ speed = 10
 game_over=False
 while not game_over:
     for event in pygame.event.get():
-        print("event = ", event)
         if event.type==pygame.QUIT:
             game_over=True
     
@@ -69,9 +68,9 @@ while not game_over:
     elif keys_pressed[K_RIGHT]:
         direction = [1, 0]
     
-    # Update rectangle position
-    x, y = move_rectangle(direction, x, y)
-    draw_rectangle(x, y)
+    # Update square position
+    x, y = move_square(direction, x, y)
+    draw_square(x, y)
     
     # Update display
     pygame.display.update()

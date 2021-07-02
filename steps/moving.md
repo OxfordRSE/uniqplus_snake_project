@@ -1,6 +1,6 @@
-# Moving objects
+# Moving a square across the screen
 
-In this vignette, we are going to describe how we can use objects move across the screen in response to arrow keys being pressed.
+In this vignette, we are going to describe how we can make a square move across our screen in response to the game player pressing the arrow keys.
 
 We are going to start with our square in the middle of the screen and allow it to move left, right, up or down in response to pressing of the keys. We are going to do this in such a way that the square continues to move in a direction unless keys are pressed which make it move in a different direction.
 
@@ -93,7 +93,6 @@ direction = [0, 0]
 game_over=False
 while not game_over:
     for event in pygame.event.get():
-        print("event = ", event)
         if event.type==pygame.QUIT:
             game_over=True
     
