@@ -5,7 +5,7 @@ This repository represents a day long project providing an introduction to objec
 ## What is snake?
 [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)) is a common name for a game in which a player maneuvers a line which grows in length, where the main obstacle is the line itself. Although variants existed before, it became popular in the late 1990s when it was preloaded onto Nokia phones.
 
-![example screenshot](https://www.silicon.co.uk/wp-content/uploads/2012/08/snakenokia3310.jpg)
+<img src="https://www.silicon.co.uk/wp-content/uploads/2012/08/snakenokia3310.jpg" width="200" height="200" />
 
 ## Our snake games
 Here, we offer two possible variants of the game of increasing difficulty:
