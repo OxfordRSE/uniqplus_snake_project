@@ -96,4 +96,4 @@ Then if you click the exit button in the top left of the game display, the game 
 
 # Next vignette
 
-The [next](.drawing.md) vignette shows how to draw our snake on the screen.
+The [next](./drawing.md) vignette shows how to draw a square on the screen.
