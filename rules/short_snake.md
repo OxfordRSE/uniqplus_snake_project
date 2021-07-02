@@ -11,3 +11,5 @@
 # How do do this?
 
 We have provided a [detailed walkthrough](../steps/coding_up_short_snake.md) of the steps needed to code up short snake using principles of object oriented programming. We recommend all but the most intrepid of coders follow the walkthrough!
+
+A fully working version of the code is provided [here](../short_snake/), and we recommend all coders execute this code (and play a few games) to get familiar with how the game works.

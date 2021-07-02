@@ -11,3 +11,6 @@
 # How to do this?
 
 Where we are going there are no roads (/walkthroughs). But, the [Short Snake walkthrough](../steps/coding_up_short_snake.md) provides a good base from which to build on.
+
+A fully working version of the code is, however, provided [here](../growing_snake/), and we recommend all coders execute this code (and play a few games) to get familiar with how the game works.
+
