@@ -18,9 +18,16 @@ This repository represents a day long project providing an introduction to objec
 - Food appears at the start of the game in a random location on the screen.
 - Each time a piece of food is eaten, another piece of food appears at a random location on the screen.
 
-## How to get started
+## Installing pygame
 In this project, we are going to use the Python package `pygame`. To install it, you can run:
 
 `pip install pygame`
 
 from the command line. Note that this requires you to have the command line tool `pip` installed (see [here](https://pip.pypa.io/en/stable/installing/) for instructions on this).
+
+## Getting started
+To help get you acquainted with pygame and to give some guidance of the task, we have created the following short vignettes, which guide you through the process.
+- [Setting up a blank canvas](https://github.com/OxfordRSE/uniqplus_snake_project/blob/main/steps/blank_screen.md)
+- [Drawing on the canvas](https://github.com/OxfordRSE/uniqplus_snake_project/blob/main/steps/drawing.md)
+- [Accessing the keys pressed by a user](https://github.com/OxfordRSE/uniqplus_snake_project/blob/main/steps/keys.md)
+- [Moving a rectangle across the canvas using the keys](https://github.com/OxfordRSE/uniqplus_snake_project/blob/main/steps/moving.md)
