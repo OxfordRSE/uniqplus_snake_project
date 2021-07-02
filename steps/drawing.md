@@ -2,15 +2,15 @@
 
 In this vignette, we are going to explain how to draw on the screen. We are going to need to do this so that we can draw both the snake and the food it eats.
 
-## Drawing a rectangle
+## Drawing a square
 
 Pygame comes with the [pygame.draw.rect](http://www.pygame.org/docs/ref/draw.html) method which will draw a rectangle on the screen. The arguments to this function are:
 
 1. the screen itself
 2. the colour we wish to draw
-3. a list of the form [left, top, width, height] which specifies the limits of the rectangle.
+3. a list of the form `[left, top, width, height]` which specifies the limits of the rectangle.
 
-We are now going to draw a stationary white rectangle in the middle of the screen.
+We are now going to draw a stationary white square in the middle of the screen.
 
 ```python
 import pygame
@@ -36,7 +36,7 @@ while not game_over:
     # Draw black canvas
     screen.fill(BLACK)
     
-    # Draw rectangle
+    # Draw square
     size = 20
     pygame.draw.rect(
             screen, WHITE,
@@ -47,11 +47,13 @@ while not game_over:
 pygame.quit()
 ```
 
+
+
 ## Adding text to the screen
 
 We are now going to add some text to the screen.
 
-We can do this with a combination of functions starting with [pygame.font.SysFont](https://www.pygame.org/docs/ref/font.html), which selects the font we are goind to display the message in. This function takes as arguments:
+We can do this with a combination of functions starting with [pygame.font.SysFont](https://www.pygame.org/docs/ref/font.html), which selects the font we are going to display the message in. This function takes as arguments:
 
 1. a font name (here we specify None so as to get the default font)
 2. a font size
@@ -92,7 +94,8 @@ while not game_over:
     
     # Draw black canvas
     screen.fill(BLACK)
-    # Draw rectangle
+    
+    # Draw square
     size = 20
     pygame.draw.rect(
             screen, WHITE,

@@ -2,9 +2,9 @@
 
 ## A screen that lives and dies quickly
 
-In this first session, we are going to create a blank screen using Pygame. This screen will be where our snake lives and feeds.
+In this first session, we are going to create a blank screen using pygame. This screen will be where our snake lives, roams and feeds.
 
-Code to do this is below. Copy and paste it into a script file and run the script.
+Code to do this is below. Copy and paste it into a script file and run the script. Note that the below code if ran will appear then immediately close.
 
 ```python
 import pygame
@@ -29,7 +29,7 @@ pygame.quit()
 
 ## A screen that lives for a specified amount of time
 
-The trouble with the above code is that it will appear and immediately close. To fix this, we are going to make an infinite game loop that continues to run forever.
+The trouble with the above code is that the screen closes too soon. To fix this, we are going to make an infinite game loop that continues to run forever.
 
 ```python
 import pygame
@@ -55,7 +55,7 @@ while not game_over:
 pygame.quit()
 ```
 
-Note, to make the screen disappear you will have to run cntrl+c from the terminal.
+Note, to make the screen disappear you will have to run `Ctrl+c` from the terminal.
 
 ## Making a screen that we can exit
 
@@ -94,3 +94,6 @@ Running the above you should see a bunch of events printed to the Python console
 
 Then if you click the exit button in the top left of the game display, the game should terminate.
 
+# Next vignette
+
+The [next](.drawing.md) vignette shows how to draw our snake on the screen.
