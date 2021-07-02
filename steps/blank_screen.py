@@ -27,6 +27,13 @@ while not game_over:
             screen, WHITE,
       			[SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, 20, 20]
         )
+    
+    # Draw text
+    font_style = pygame.font.SysFont(None, 50)
+    mesg = font_style.render("UNIQ+ rocks!", True, WHITE)
+    screen.blit(mesg, [SCREEN_WIDTH // 2, 0])
+    
+    # Update display
     pygame.display.update()
 
 pygame.quit()
