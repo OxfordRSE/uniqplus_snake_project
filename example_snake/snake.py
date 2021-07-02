@@ -5,13 +5,13 @@ WHITE = (255, 255, 255)
 
 
 def losing_message(msg, screen, screen_width, screen_height):
-    font_style = pygame.font.SysFont(None, 50, screen_width, screen_height)
+    font_style = pygame.font.SysFont(None, 50)
     mesg = font_style.render(msg, True, WHITE)
     screen.blit(mesg, [screen_width/2, screen_height/2])
     
 
 def score_message(score, screen, screen_width, screen_height):
-    font_style = pygame.font.SysFont(None, 50, screen_width, screen_height)
+    font_style = pygame.font.SysFont(None, 50)
     value = font_style.render("Your Score: " + str(score), True, WHITE)
     screen.blit(value, [0, 0])
 
