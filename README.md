@@ -27,7 +27,8 @@ from the command line. Note that this requires you to have the command line tool
 
 ## Getting started
 To help get you acquainted with pygame and to give some guidance of the task, we have created the following short vignettes, which guide you through the process.
-- [Setting up a blank canvas](https://github.com/OxfordRSE/uniqplus_snake_project/blob/main/steps/blank_screen.md)
-- [Drawing on the canvas](https://github.com/OxfordRSE/uniqplus_snake_project/blob/main/steps/drawing.md)
-- [Accessing the keys pressed by a user](https://github.com/OxfordRSE/uniqplus_snake_project/blob/main/steps/keys.md)
-- [Moving a rectangle across the canvas using the keys](https://github.com/OxfordRSE/uniqplus_snake_project/blob/main/steps/moving.md)
+- [Setting up a blank canvas](./steps/blank_screen.md)
+- [Drawing on the canvas](./steps/drawing.md)
+- [Accessing the keys pressed by a user](./steps/keys.md)
+- [Moving a rectangle across the canvas using the keys](./steps/moving.md)
+- [Controlling the game speed](./steps/speed.md)
