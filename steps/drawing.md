@@ -49,7 +49,7 @@ pygame.quit()
 
 
 
-## Adding text to the screen
+## Adding text to the screen
 
 We are now going to add some text to the screen.
 
