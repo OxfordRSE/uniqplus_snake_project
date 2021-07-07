@@ -79,7 +79,7 @@ game_over=False
 while not game_over:
     pygame.display.update()
     for event in pygame.event.get():
-      	print("event = ", event)
+        print("event = ", event)
         if event.type==pygame.QUIT:
             game_over=True
     
