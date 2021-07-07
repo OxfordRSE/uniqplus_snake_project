@@ -77,7 +77,7 @@ BLACK = (0, 0, 0)
 # Run game loop
 game_over=False
 while not game_over:
-  	pygame.display.update()
+    pygame.display.update()
     for event in pygame.event.get():
       	print("event = ", event)
         if event.type==pygame.QUIT:
