@@ -49,8 +49,8 @@ game_over=False
 while not game_over:
   
   # Display screen
-	screen.fill(BLACK)
-	pygame.display.update()
+  screen.fill(BLACK)
+  pygame.display.update()
 
 pygame.quit()
 ```
@@ -84,8 +84,8 @@ while not game_over:
             game_over=True
     
     # Display screen
-		screen.fill(BLACK)
-		pygame.display.update()
+    screen.fill(BLACK)
+    pygame.display.update()
 
 pygame.quit()
 ```
