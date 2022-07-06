@@ -2,7 +2,7 @@
 
 In this guide, we provide a list of ideas for coding up snake in using concepts from object oriented programming (OOP). Note, this is just one possible way to code up the game and many others are possible and may well be better!
 
-Note also that, we provide a fully working version of the game using OOP in [this](./short_snake/) folder. We expect that it may be useful to consult our approach throughout the task to give you an idea as to how to proceed.
+Note also that, we provide a fully working version of the game using OOP in [this](../short_snake/) folder. We expect that it may be useful to consult our approach throughout the task to give you an idea as to how to proceed.
 
 We first discuss the three Python classes that we are going to create:
 
