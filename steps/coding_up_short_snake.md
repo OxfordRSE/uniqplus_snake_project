@@ -20,7 +20,7 @@ Our snake and our food are going to be composed of bones. Computational bones ar
 * a `pos`: a list `[x,y]` of the bone's coordinates
 * a `size`: the width or height of the bone (it's a square)
 
-Bones also have a method that draws them at their given position on the canvas. Here, we would just use the `pyjama.draw.rect` method size the bones are squares. Note this function will need to take the screen as an input to be able to draw on it.
+Bones also have a method that draws them at their given position on the canvas. Here, we would just use the `pygame.draw.rect` method to draw the bones as squares. Note this function will need to take the screen as an input to be able to draw on it.
 
 ##Food 
 
